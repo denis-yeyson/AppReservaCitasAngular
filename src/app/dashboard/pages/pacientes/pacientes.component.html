@@ -1,0 +1,56 @@
+<div class="row">
+  <div class="col-md-12">
+    <div class="card">
+      <div class="card-header">
+        <div class="card-title">Lista de Pacientes</div>
+      </div>
+      <div class="card-body">
+        <!-- <table class="table table-hover table-responsive">
+          <thead>
+            <tr>
+              <th scope="col">N°</th>
+              <th scope="col">Nombres</th>
+              <th scope="col">Apellidos</th>
+              <th scope="col">DNI</th>
+              <th scope="col">Telefono/Celular</th>
+              <th scope="col">Correo</th>
+              <th scope="col">Dirección</th>
+              <th scope="col">Fecha Nacimiento</th>
+              <th scope="col">Fecha Registro</th>
+              <th scope="col">Opciones</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let paciente of pacientes">
+              <th scope="row">{{ paciente.idPaciente }}</th>
+              <td>{{ paciente.nombres }}</td>
+              <td>{{ paciente.apellidos }}</td>
+              <td>{{ paciente.dni }}</td>
+              <td>{{ paciente.telefono }}</td>
+              <td>{{ paciente.correo }}</td>
+              <td>{{ paciente.direccion }}</td>
+              <td>{{ paciente.fechaNacimiento }}</td>
+              <td>{{ paciente.fechaRegistro }}</td>
+              <td class="d-flex justify-content-end">
+                <a href="" class="btn btn-primary mr-2"
+                  ><li class="la la-edit"></li
+                ></a>
+                <a href="" class="btn btn-danger mr-2"
+                  ><li class="la la-trash"></li
+                ></a>
+                <a href="" class="btn btn-info"
+                  ><li class="la la-plus"></li>
+                  Mas información</a
+                >
+              </td>
+            </tr>
+          </tbody>
+        </table> -->
+
+        <ul>
+          <li *ngFor="let paciente of pacientes">{{paciente.nombres}}</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>

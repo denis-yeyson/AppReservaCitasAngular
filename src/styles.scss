@@ -1,1 +1,26 @@
-/* You can add global styles to this file, and also import other style files */
+/*! Developer by @denisyeyson 2021 */
+
+//Archivos externos
+@import "./scss/bootstrap/bootstrap.scss";
+
+@import "./scss/variables";
+@import "./scss/outlinefocus";
+@import "./scss/typography";
+
+//plugins
+@import "./scss/plugins";
+
+//layouts
+@import "./scss/layouts";
+
+//icons
+@import "./scss/line-awesome";
+
+//components
+@import "./scss/components";
+
+//responsive
+@import "./scss/responsive";
+
+//plugins
+@import "./scss/plugins";
