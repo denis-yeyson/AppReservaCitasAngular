@@ -1,4 +1,4 @@
-
+/*
 Circles.create({
 	id:           'task-complete',
 	radius:       75,
@@ -12,8 +12,8 @@ Circles.create({
 	textClass:    'circles-text',
 	styleWrapper: true,
 	styleText:    true
-})
-
+})*/
+/* Primera alerta que se muestra en pantalla
 $.notify({
 	icon: 'la la-bell',
 	title: 'Bootstrap notify',
@@ -25,10 +25,10 @@ $.notify({
 		align: "right"
 	},
 	time: 1000,
-});
+}); */
 
 // monthlyChart
-
+/*
 Chartist.Pie('#monthlyChart', {
 	labels: ['50%', '20%', '30%'],
 	series: [50, 20, 30]
@@ -99,7 +99,7 @@ $(".mapcontainer").mapael({
 				fill: "#004a9b"
 				, opacity: 0.6
 			}
-		}, 
+		},
 		defaultArea: {
 			attrs: {
 				fill: "#e4e4e4"
@@ -139,7 +139,7 @@ $(".mapcontainer").mapael({
 					}
 					, attrsHover: {
 						fill: "#59d05d"
-					}					
+					}
 				},
 				"US": {
 					tooltip: {content: "<b>United State</b>"},
@@ -148,7 +148,7 @@ $(".mapcontainer").mapael({
 					}
 					, attrsHover: {
 						fill: "#59d05d"
-					}					
+					}
 				},
 				"AU": {
 					tooltip: {content: "<b>Australia</b>"},
@@ -157,7 +157,7 @@ $(".mapcontainer").mapael({
 					}
 					, attrsHover: {
 						fill: "#59d05d"
-					}					
+					}
 				}
 			},
-		});
+		});*/

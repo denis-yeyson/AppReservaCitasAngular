@@ -3,9 +3,15 @@
     <div class="card">
       <div class="card-header">
         <div class="card-title">Lista de Pacientes</div>
+        <form action="" (ngSubmit)="buscar()">
+          <input type="text" class="form-control" placeholder="Buscar..." [(ngModel)]="paciente">
+        </form>
+      </div>
+      <div class="alert alert-danger" role="alert">
+        No se encontro lo buscado
       </div>
       <div class="card-body">
-        <!-- <table class="table table-hover table-responsive">
+        <table class="table table-hover table-responsive">
           <thead>
             <tr>
               <th scope="col">N°</th>
@@ -21,7 +27,7 @@
             </tr>
           </thead>
           <tbody>
-            <tr *ngFor="let paciente of pacientes">
+            <tr *ngFor="let paciente of pacientes | paginate: { itemsPerPage: 5, currentPage: paginaActual } | filterBy: paciente">
               <th scope="row">{{ paciente.idPaciente }}</th>
               <td>{{ paciente.nombres }}</td>
               <td>{{ paciente.apellidos }}</td>
@@ -45,11 +51,8 @@
               </td>
             </tr>
           </tbody>
-        </table> -->
-
-        <ul>
-          <li *ngFor="let paciente of pacientes">{{paciente.nombres}}</li>
-        </ul>
+        </table>
+        <pagination-controls (pageChange)="paginaActual = $event"></pagination-controls>
       </div>
     </div>
   </div>

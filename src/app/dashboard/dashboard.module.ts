@@ -1,28 +1,29 @@
 import { NgModule } from '@angular/core';
+import { CommonModule } from '@angular/common';
 import { HomeComponent } from './pages/home/home.component';
 import { MedicosComponent } from './pages/medicos/medicos.component';
 import { PacientesComponent } from './pages/pacientes/pacientes.component';
-import { CitasComponent } from './pages/citas/citas.component';
 import { EspecialidadesComponent } from './pages/especialidades/especialidades.component';
-import { DashboardRoutingModule } from './dashboard-routing.module';
-import { HeaderComponent } from './header/header.component';
-import { PrincipalComponent } from './pages/principal/principal.component';
+import { CitasComponent } from './pages/citas/citas.component';
+import { MainComponent } from './pages/main/main.component';
+import { HeaderComponent } from './pages/header/header.component';
 import { SidebarComponent } from './pages/sidebar/sidebar.component';
+import { DashboardRoutingModule } from './dashboard-routing.module';
+import {NgxPaginationModule} from 'ngx-pagination';
+import { FilterPipeModule } from 'ngx-filter-pipe';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
     HomeComponent,
     MedicosComponent,
     PacientesComponent,
-    CitasComponent,
     EspecialidadesComponent,
+    CitasComponent,
+    MainComponent,
     HeaderComponent,
-    PrincipalComponent,
-    SidebarComponent
+    SidebarComponent,
   ],
-  imports: [
-    DashboardRoutingModule
-  ],
-
+  imports: [CommonModule,DashboardRoutingModule,NgxPaginationModule,FormsModule,FilterPipeModule,ReactiveFormsModule]
 })
-export class DashboardModule { }
+export class DashboardModule {}

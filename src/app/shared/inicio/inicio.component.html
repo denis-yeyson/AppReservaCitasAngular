@@ -1,3 +1,113 @@
-<a routerLink="/auth/login">Iniciar Sesion</a>
-<hr>
-<a routerLink="/auth/registrarse">Registrarse</a>
+<nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+  <button
+    class="navbar-toggler"
+    type="button"
+    data-toggle="collapse"
+    data-target="#navbarTogglerDemo03"
+    aria-controls="navbarTogglerDemo03"
+    aria-expanded="false"
+    aria-label="Toggle navigation"
+  >
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <a class="navbar-brand" href="#">ReservaCitaMedica</a>
+  <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
+    <ul class="navbar-nav ml-auto mr-auto mt-2 mt-lg-0">
+      <li class="nav-item active">
+        <a class="nav-link" href="#sedes">Sedes</a>
+      </li>
+      <li class="nav-item active">
+        <a class="nav-link" href="#servicios">Servicios</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#contacto">Contacto</a>
+      </li>
+    </ul>
+    <div class="form-inline my-2 my-lg-0">
+      <a routerLink="/auth/login" class="btn btn-info my-2 my-sm-0"
+        >Iniciar Sesión</a
+      >
+      <a routerLink="/auth/registro" class="btn btn-info my-2 my-sm-0 ml-2"
+        >Registrarse</a
+      >
+    </div>
+  </div>
+</nav>
+<div class="row">
+  <div class="col-12 mt-4">
+    <div
+      id="carouselExampleIndicators"
+      class="carousel slide carousel-fade"
+      data-ride="carousel"
+    >
+      <ol class="carousel-indicators">
+        <li
+          data-target="#carouselExampleIndicators"
+          data-slide-to="0"
+          class="active"
+        ></li>
+        <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+        <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+      </ol>
+      <div class="carousel-inner">
+        <div class="carousel-item active" *ngFor="let sl of slide" [class.active]="sl.titulo === 'EXITO'">
+          <img src={{sl.img}} />
+          <div class="carousel-caption d-none d-md-block">
+            <h5>{{sl.titulo}}</h5>
+            <p>{{sl.subtitulo}}</p>
+          </div>
+        </div>
+      </div>
+      <a
+        class="carousel-control-prev"
+        href="#carouselExampleIndicators"
+        role="button"
+        data-slide="prev"
+      >
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+      </a>
+      <a
+        class="carousel-control-next"
+        href="#carouselExampleIndicators"
+        role="button"
+        data-slide="next"
+      >
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+      </a>
+    </div>
+  </div>
+</div>
+<div class="container">
+  <div id="sedes" class="pt-5">
+    <h1 class="pt-5 titulo">sedes</h1>
+    <div class="card-deck">
+      <div class="card" *ngFor="let sede of sedes">
+        <img
+          class="card-img-top"
+          ng:src="{{ sede.img }}"
+          alt="Card image cap"
+        />
+        <div class="card-body">
+          <h5 class="card-title">{{ sede.nombre }}</h5>
+          <p class="card-text pb-4">{{ sede.dir }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div id="servicios" class="pt-5">
+    <h1 class="pt-5 titulo">servicios</h1>
+    <div class="row">
+      <div class="card col-12 col-md-4 m-0" *ngFor="let e of espec">
+        <img class="card-img-top" ng:src="{{ e.img }}" alt="Card image cap" />
+        <div class="card-img-overlay centrar">
+          <h5 class="card-title">{{ e.nombre }}</h5>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div id="contacto" class="pt-5">
+    <h1 class="pt-5 titulo">contacto</h1>
+  </div>
+</div>

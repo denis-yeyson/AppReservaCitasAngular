@@ -1,1 +1,187 @@
-<p>registro works!</p>
+<div class="limiter">
+  <div
+    class="container-login100"
+    style="background-image: url(../assets/img/inicio/bg-01.jpg)"
+  >
+    <div class="wrap-login100">
+      <form class="login100-form validate-form" autocomplete="off" [formGroup]="formSavePaciente" (ngSubmit)="registrar()">
+        <span class="login100-form-title mb-4"> Registro de Paciente </span>
+        <div class="row">
+          <div class="col-12 col-md-6 pr-2">
+            <div
+              class="wrap-input100 validate-input"
+            >
+            <i class="la la-user"></i>
+              <input
+                class="input100"
+                type="text"
+                formControlName="nombres"
+                placeholder="Ingrese nombres"
+              />
+            </div>
+          </div>
+          <div class="col-12 col-md-6 pl-2">
+            <div
+              class="wrap-input100 validate-input"
+            >
+            <i class="la la-user"></i>
+              <input
+                class="input100"
+                type="text"
+                formControlName="apellidos"
+                placeholder="Ingrese apellidos"
+              />
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-12 col-md-6 pr-2">
+            <div
+              class="wrap-input100 validate-input"
+            >
+              <i class="la la-tablet"></i>
+              <input
+                class="input100"
+                type="text"
+                formControlName="dni"
+                placeholder="Ingrese dni"
+              />
+            </div>
+          </div>
+          <div class="col-12 col-md-6 pl-2">
+            <div
+              class="wrap-input100 validate-input"
+            >
+              <i class="la la-phone"></i>
+                            <input
+                class="input100"
+                type="text"
+                formControlName="telefono"
+                placeholder="Ingrese celular"
+              />
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-12 col-md-6 pr-2">
+            <div
+              class="wrap-input100 validate-input"
+              data-validate="Ingrese sexo"
+            >
+              <i class="la la-envelope-o"></i>
+              <input
+                class="input100"
+                type="text"
+                formControlName="estado_civil"
+                placeholder="Ingrese estado civil"
+              />
+            </div>
+          </div>
+          <div class="col-12 col-md-6 pl-2">
+            <div
+              class="wrap-input100 validate-input"
+              data-validate="Ingrese correo"
+            >
+              <i class="la la-envelope-o"></i>
+              <input
+                class="input100"
+                type="text"
+                formControlName="correo"
+                placeholder="Ingrese correo"
+              />
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-12 col-md-6 pr-2">
+          <div class="wrap-input100 validate-input">
+            <i class="la la-map-marker"></i>
+            <input
+              class="input100"
+              type="text"
+              formControlName="direccion"
+              placeholder="Ingrese direccion"
+            />
+          </div>
+          </div>
+          <div class="col-12 col-md-6 pl-2">
+            <div class="wrap-input100 validate-input">
+              <i class="la la-map-marker"></i>
+              <input
+                class="input100"
+                type="text"
+                formControlName="id_distrito"
+                placeholder="Ingrese distrito"
+              />
+            </div>
+          </div>
+        </div>
+            <div class="row">
+              <div class="col-12 col-md-6 pr-2">
+                <div
+                  class="wrap-input100 validate-input"
+                >
+                  <i class="la la-birthday-cake"></i>
+                  <input
+                    class="input100"
+                    type="date"
+                    formControlName="fecha_nacimiento"
+                    placeholder="Fecha Nacimiento"
+                  />
+                </div>
+              </div>
+              <div class="col-12 col-md-6 pl-2">
+                <div
+                  class="wrap-input100 validate-input"
+                >
+                  <i class="la la-group"></i>
+                  <input
+                    class="input100"
+                    type="text"
+                    formControlName="sexo"
+                    placeholder="Sexo"
+                  />
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-12 col-md-6 pr-2">
+                <div
+                  class="wrap-input100 validate-input"
+                >
+                  <i class="la la-lock"></i>
+                  <input
+                    class="input100"
+                    type="text"
+                    formControlName="nombre_usuario"
+                    placeholder="Ingrese nombre usuario"
+                  />
+                </div>
+              </div>
+              <div class="col-12 col-md-6 pl-2">
+                <div
+                  class="wrap-input100 validate-input"
+                >
+                  <i class="la la-lock"></i>
+                  <input
+                    class="input100"
+                    type="password"
+                    formControlName="clave"
+                    placeholder="Ingrese contraseña"
+                  />
+                </div>
+              </div>
+            </div>
+        <div class="container-login100-form-btn mb-4">
+          <button class="login100-form-btn"[disabled]="formSavePaciente.invalid"
+          type="submit">
+            Registrar
+          </button>
+        </div>
+        <div class="text-center p-t-90">
+          <a class="txt1" routerLink="/auth/login"> Iniciar Sesión </a>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

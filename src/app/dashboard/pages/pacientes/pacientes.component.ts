@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { PacienteService } from '../../services/paciente.service';
-import { Paciente } from '../../interfaces/paciente.interface';
+import { Paciente } from './paciente.interface';
+import { PacientesService } from './pacientes.service';
 
 @Component({
   selector: 'app-pacientes',
@@ -8,11 +8,19 @@ import { Paciente } from '../../interfaces/paciente.interface';
 })
 export class PacientesComponent implements OnInit {
 
-  pacientes: Paciente[];
-  constructor(private PacienteService:PacienteService) {}
+  pacientes:Paciente[]=[];
+  paginaActual:number = 1;
+  paciente:any ={idPaciente:'',nombres:'',apellidos:''};
+  constructor( private pacientesService: PacientesService) { }
 
   ngOnInit(): void {
-    this.PacienteService.getPacientes().subscribe(pacientes=>this.pacientes=pacientes);
-    //console.log('otros: '+ pacientes);
+
+    this.pacientesService.getPacientes()
+    .subscribe(pacientes=>this.pacientes=pacientes)
   }
+
+  buscar(){
+
+  }
+
 }

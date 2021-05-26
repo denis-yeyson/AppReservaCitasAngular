@@ -1,4 +1,5 @@
 import { NgModule } from '@angular/core';
+import { CommonModule } from '@angular/common';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -15,7 +16,7 @@ import { HttpClientModule } from '@angular/common/http';
     ErrorPageComponent,
     InicioComponent
   ],
-  imports: [BrowserModule,HttpClientModule,AppRoutingModule],
+  imports: [BrowserModule,CommonModule,HttpClientModule,AppRoutingModule],
   bootstrap: [AppComponent]
 })
 export class AppModule {}

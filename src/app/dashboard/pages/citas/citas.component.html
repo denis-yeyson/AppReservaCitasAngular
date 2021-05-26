@@ -1,1 +1,40 @@
-<p>citas works!</p>
+<h1 class="h4">Nueva Cita</h1>
+<div class="row">
+  <form [formGroup]="miFormulario">
+    <div>
+      <label for="formEspecialidades">Especialidades</label>
+      <select class="form-control col-6" formControlName="idEspecialidad" (change)="buscarMedicoEspecialidad()">
+        <option [value]="especialidad.idEspecialidad"
+        *ngFor="let especialidad of especialidades"
+        >{{especialidad.nombre}}</option>
+      </select>
+    </div>
+    <div>
+      <label>Medicos</label>
+      <div class="card-columns">
+        <div class="card" *ngFor="let medico of medicos">
+          <img src="assets/img/profile.jpg" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">{{medico.nombres}}</h5>
+            <p class="card-text">{{medico.apellidos}}</p>
+            <button class="btn btn-info btn-block" (click)="seleccionarMedico(medico.idMedico)">SELECCCIONAR</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div>
+      <label>Fechas</label>
+      <br>
+      <button class="btn btn-info ml-2"
+      *ngFor="let fecha of fechasDisponibles" (click)="mostrarHoras(fecha.fecha)">{{fecha.fecha}}</button>
+    </div>
+    <div>
+      <label>Horarios</label>
+      <br>
+      <button class="btn btn-info ml-2 mb-2"
+      *ngFor="let hora of horasDisponibles" (click)="seleccionarHora(hora.idHorario)">{{hora.horaInicio +' - ' +hora.horaFin}}</button>
+    </div>
+    <button class="btn btn-primary " type="submit" (click)="registrarCita()">AGENDAR CITA</button>
+  </form>
+
+</div>

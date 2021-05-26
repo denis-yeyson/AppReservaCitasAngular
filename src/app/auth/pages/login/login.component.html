@@ -1,19 +1,23 @@
 <div class="limiter">
   <div class="container-login100" style="background-image: url(../assets/img/inicio/bg-01.jpg)">
     <div class="wrap-login100">
-      <form class="login100-form validate-form">
+      <form class="login100-form validate-form"
+      autocomplete="off"
+      [formGroup]="miFormulario" (ngSubmit)="login()">
 
         <span class="login100-form-title mb-4">
           Inicio de Sesión
         </span>
 
-        <div class="wrap-input100 validate-input" data-validate = "Ingrese su correo">
+        <div class="wrap-input100 validate-input" data-validate = "Ingrese su usuario">
           <i class="la la-envelope-o"></i>
-          <input class="input100" type="text" name="username" placeholder="Ingrese su correo">
+          <input class="input100" type="text"
+          formControlName="username"
+          placeholder="Ingrese su correo">
         </div>
         <div class="wrap-input100 validate-input" data-validate="Ingrese su contraseña">
           <i class="la la-lock"></i>
-          <input class="input100" type="password" name="pass" placeholder="Ingrese su contraseña">
+          <input class="input100" type="password" formControlName="password" placeholder="Ingrese su contraseña">
         </div>
 
         <div class="contact100-form-checkbox">
@@ -24,13 +28,21 @@
         </div>
 
         <div class="container-login100-form-btn mb-4">
-          <a class="login100-form-btn" routerLink="/dashboard/principal">
+          <button class="login100-form-btn"
+          [disabled]="miFormulario.invalid"
+          type="submit">
             INGRESAR
-          </a>
+          </button>
         </div>
         <div class="text-center p-t-90">
           <a class="txt1" href="#">
             Olvido su contraseña?
+          </a>
+        </div>
+        <hr class="my-2">
+        <div class="text-center p-t-90">
+          <a class="txt1" routerLink="/auth/registro">
+            Registrar nuevo paciente
           </a>
         </div>
       </form>

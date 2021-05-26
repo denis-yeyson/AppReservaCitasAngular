@@ -7,13 +7,13 @@
       <div class="info">
         <a class="" data-toggle="collapse" href="#collapseExample" aria-expanded="true">
           <span>
-            Denis Yeyson
-            <span class="user-level">Administrador</span>
+            {{paciente.nombres +' '+paciente.apellidos}}
+            <!-- <span class="user-level">Administrador</span> -->
             <span class="caret"></span>
           </span>
         </a>
         <div class="clearfix"></div>
-        <div class="collapse in" id="collapseExample" aria-expanded="true" style="">
+        <div class="collapse in" id="collapseExample" aria-expanded="true">
           <ul class="nav">
             <li>
               <a href="#profile">
@@ -26,8 +26,8 @@
               </a>
             </li>
             <li>
-              <a href="#settings">
-                <span class="link-collapse">Configuraciones</span>
+              <a (click)="logout()" style="cursor:pointer;">
+                <span class="link-collapse">Cerrar Sesión</span>
               </a>
             </li>
           </ul>
@@ -36,7 +36,7 @@
     </div>
     <ul class="nav">
       <li class="nav-item" routerLinkActive="active">
-        <a routerLink="/dashboard/principal">
+        <a routerLink="/dashboard/home">
           <i class="la la-home"></i>
           <p>Principal</p>
         </a>
