@@ -15,3 +15,11 @@ export interface Medico{
     telefono: string;
     urlImage: string;
 }
+
+export interface MedicoJson{
+  apellidos: string,
+  dni: number,
+  especialidad: string,
+  id_medico: number,
+  nombres: string
+}

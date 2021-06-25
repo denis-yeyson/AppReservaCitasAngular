@@ -16,3 +16,10 @@ export interface Paciente {
   idUsuario:number;
   idUbigeo:number;
 }
+
+export interface UsuarioJson {
+  apellidos: string,
+  idUsuario: number,
+  nombres: string,
+  tipoUsuario: number
+}

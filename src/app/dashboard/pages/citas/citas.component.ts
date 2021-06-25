@@ -62,9 +62,9 @@ export class CitasComponent implements OnInit {
   }
 
   seleccionarMedico(id_medic:string){
-    //this.miFormulario.patchValue({idMedico: id_medic});
+    this.miFormulario.patchValue({idMedico: id_medic});
     const{idMedico} = this.miFormulario.value;
-    this.citasService.getFechasDisponibles(1)
+    this.citasService.getFechasDisponibles(idMedico)
     .subscribe(fechasDisponibles=>this.fechasDisponibles=fechasDisponibles);
   }
 
@@ -76,13 +76,11 @@ export class CitasComponent implements OnInit {
 
   seleccionarHora(idHorarios:number){
     this.miFormulario.patchValue({idHorario: idHorarios});
-    console.log(this.miFormulario.value);
-    console.log('Id Paciente: '+localStorage.getItem('id_paciente'));
   }
 
   registrarCita(){
    const {idEspecialidad,idHorario,idMedico} = this.miFormulario.value;
-    const idPaciente=localStorage.getItem('id_paciente');
+    const idPaciente=localStorage.getItem('id_usuario');
     this.citasService.registrarCita(parseInt(idEspecialidad),parseInt(idHorario),parseInt(idMedico),parseInt(idPaciente))
     .subscribe(resp=>{
       if(resp.valor===1){

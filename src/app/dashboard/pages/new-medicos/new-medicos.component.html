@@ -1,0 +1,66 @@
+<h3>Nuevo Medico</h3>
+<form [formGroup]="formNewMedico" autocomplete="off" (ngSubmit)="registrar()">
+  <div class="form-row">
+    <div class="form-group col-md-6">
+      <label>Apellidos</label>
+      <input formControlName="apellido" type="text" class="form-control">
+    </div>
+    <div class="form-group col-md-6">
+      <label>Nombres</label>
+      <input formControlName="nombre" type="text" class="form-control">
+    </div>
+  </div>
+  <div class="form-row">
+    <div class="form-group col-md-6">
+      <label>Correo</label>
+      <input formControlName="correo" type="email" class="form-control">
+    </div>
+    <div class="form-group col-md-6">
+      <label>Dirección</label>
+      <input formControlName="direccion" type="text" class="form-control">
+    </div>
+  </div>
+  <div class="form-row">
+    <div class="form-group col-md-4">
+      <label>DNI</label>
+      <input formControlName="dni" type="text" class="form-control">
+    </div>
+    <div class="form-group col-md-4">
+      <label>Especialidad</label>
+      <select formControlName="idEspecialidad" class="form-control">
+        <option [value]="especialidad.idEspecialidad"
+        *ngFor="let especialidad of especialidades"
+        >{{especialidad.nombre}}</option>
+      </select>
+    </div>
+    <div class="form-group col-md-4">
+      <label>Fecha Nacimiento</label>
+      <input formControlName="fechaNacimiento" type="date" class="form-control">
+    </div>
+  </div>
+  <div class="form-row">
+    <div class="form-group col-md-6">
+      <label>Colegiatura</label>
+      <input formControlName="colegiatura" type="text" class="form-control">
+    </div>
+    <div class="form-group col-md-6">
+      <label>Telefono</label>
+      <input formControlName="telefono" type="text" class="form-control">
+    </div>
+  </div>
+  <div class="form-row">
+    <div class="form-group col-md-4">
+      <label>Usuario</label>
+      <input formControlName="usuario" type="text" class="form-control">
+    </div>
+    <div class="form-group col-md-4">
+      <label>Contraseña</label>
+      <input formControlName="password" type="password" class="form-control">
+    </div>
+    <div class="form-group col-md-4">
+      <label>Repetir contraseña</label>
+      <input formControlName="password2" type="password" class="form-control">
+    </div>
+  </div>
+  <button type="submit" class="btn btn-primary">Agregar Medico</button>
+</form>

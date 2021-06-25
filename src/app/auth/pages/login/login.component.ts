@@ -11,8 +11,8 @@ import { AuthService } from '../../services/auth.service';
 })
 export class LoginComponent implements OnInit {
   miFormulario: FormGroup = this.fb.group({
-    username: ['juan', [Validators.required]],
-    password: ['123456', [Validators.required, Validators.minLength(3)]],
+    username: ['admin', [Validators.required]],
+    password: ['1234', [Validators.required, Validators.minLength(3)]],
   });
 
   constructor(private fb: FormBuilder, private router: Router,private auth:AuthService) {}
@@ -21,7 +21,7 @@ export class LoginComponent implements OnInit {
 
   login() {
     const {username,password} = this.miFormulario.value;
-    this.auth.loginPaciente(username,password).subscribe(resp=>{
+    this.auth.login(username,password).subscribe(resp=>{
       if(resp===true){
         this.router.navigateByUrl('dashboard/home');
       }else{

@@ -3,15 +3,9 @@
     <div class="card">
       <div class="card-header">
         <div class="card-title">Lista de Pacientes</div>
-        <form action="" (ngSubmit)="buscar()">
-          <input type="text" class="form-control" placeholder="Buscar..." [(ngModel)]="paciente">
-        </form>
-      </div>
-      <div class="alert alert-danger" role="alert">
-        No se encontro lo buscado
       </div>
       <div class="card-body">
-        <table class="table table-hover table-responsive">
+        <table datatable class="table table-hover table-responsive">
           <thead>
             <tr>
               <th scope="col">N°</th>
@@ -22,12 +16,11 @@
               <th scope="col">Correo</th>
               <th scope="col">Dirección</th>
               <th scope="col">Fecha Nacimiento</th>
-              <th scope="col">Fecha Registro</th>
-              <th scope="col">Opciones</th>
+              <!-- <th scope="col">Opciones</th> -->
             </tr>
           </thead>
           <tbody>
-            <tr *ngFor="let paciente of pacientes | paginate: { itemsPerPage: 5, currentPage: paginaActual } | filterBy: paciente">
+            <tr *ngFor="let paciente of pacientes">
               <th scope="row">{{ paciente.idPaciente }}</th>
               <td>{{ paciente.nombres }}</td>
               <td>{{ paciente.apellidos }}</td>
@@ -36,23 +29,17 @@
               <td>{{ paciente.correo }}</td>
               <td>{{ paciente.direccion }}</td>
               <td>{{ paciente.fechaNacimiento }}</td>
-              <td>{{ paciente.fechaRegistro }}</td>
-              <td class="d-flex justify-content-end">
+              <!-- <td class="d-flex justify-content-end">
                 <a href="" class="btn btn-primary mr-2"
                   ><li class="la la-edit"></li
                 ></a>
                 <a href="" class="btn btn-danger mr-2"
                   ><li class="la la-trash"></li
                 ></a>
-                <a href="" class="btn btn-info"
-                  ><li class="la la-plus"></li>
-                  Mas información</a
-                >
-              </td>
+              </td> -->
             </tr>
           </tbody>
         </table>
-        <pagination-controls (pageChange)="paginaActual = $event"></pagination-controls>
       </div>
     </div>
   </div>

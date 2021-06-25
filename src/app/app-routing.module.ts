@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { AdminGuard } from './guards/admin.guard';
 import { ValidarPacienteStorageGuard } from './guards/validar-paciente-storage.guard';
 
 import { ErrorPageComponent } from './shared/error-page/error-page.component';
@@ -18,7 +19,6 @@ const routes: Routes = [
     canActivate: [ValidarPacienteStorageGuard],
     canLoad: [ValidarPacienteStorageGuard]
   },
-
   { path: '404', component: ErrorPageComponent },
   { path: '**', redirectTo: '404' },
 ];

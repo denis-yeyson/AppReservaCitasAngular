@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { Medico } from './medico.interface';
+import { Medico, MedicoJson } from './medico.interface';
 
 @Injectable({
   providedIn: 'root'
@@ -20,5 +20,9 @@ export class MedicosService {
 
   getMedicoId(id_medico:number):Observable<Medico> {
     return this.http.get<Medico>(`http://localhost:8050/api/medicos/${id_medico}`);
+  }
+
+  getConsultaMedicos(dato:string):Observable<MedicoJson[]> {
+    return this.http.get<MedicoJson[]>(`http://localhost:8050/api/medicos/consulta_medicos/${dato}`);
   }
 }

@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { CanActivate, CanLoad, Route, UrlSegment, ActivatedRouteSnapshot, RouterStateSnapshot, UrlTree, Router } from '@angular/router';
+import { CanActivate, CanLoad, Router } from '@angular/router';
 import { Observable } from 'rxjs';
 import { tap } from 'rxjs/operators';
 import { AuthService } from '../auth/services/auth.service';
@@ -18,7 +18,7 @@ export class ValidarPacienteStorageGuard implements CanActivate, CanLoad {
       }})
     );
   }
-  canLoad():Observable<boolean> |boolean {
+  canLoad():Observable<boolean> | boolean {
     return this.authService.validarSesion().pipe(
       tap(valid=>{if(!valid){
         this.router.navigateByUrl('/auth/login');

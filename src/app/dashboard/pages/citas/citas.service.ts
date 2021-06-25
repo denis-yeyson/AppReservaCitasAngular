@@ -3,7 +3,7 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { ResponseJson } from 'src/app/auth/interfaces/interfaces';
 import { environment } from 'src/environments/environment';
-import { FechasDisponibles, HorasDisponibles } from './interfaces/fecha_disponibles.interface';
+import { FechasDisponibles, HorasDisponibles, listaCitas } from './interfaces/fecha_disponibles.interface';
 
 @Injectable({
   providedIn: 'root'
@@ -26,5 +26,16 @@ export class CitasService {
     const url = `${this.baseUrl}/citas/guardarCita`;
     const body = { idEspecialidad,idHorario,idMedico,idPaciente };
     return this.http.post<ResponseJson>(url, body);
+  }
+
+  registroProgramacionCita(id_medico: number,id_usuario_paciente: number,fecha: string,hora_inicio: string,hora_final: string){
+    const url = `${this.baseUrl}/citas/programacion_cita`;
+    const body = { id_medico,id_usuario_paciente,fecha,hora_inicio,hora_final };
+    return this.http.post<ResponseJson>(url, body);
+  }
+
+  listaCitasReservadas(datos: string){
+    const url = `${this.baseUrl}/citas/listar_citas/${datos}`;
+    return this.http.get<listaCitas[]>(url);
   }
 }

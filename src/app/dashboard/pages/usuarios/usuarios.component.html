@@ -1,0 +1,197 @@
+<div class="row">
+  <div class="col-md-12">
+    <div class="card">
+      <div class="card-header">
+        <div class="card-title">Lista de Usuarios</div>
+      </div>
+      <div class="card-body">
+        <nav>
+          <div class="nav nav-tabs" id="nav-tab" role="tablist">
+            <a
+              class="nav-link active" routerLinkActive="active"
+              id="nav-home-tab"
+              data-toggle="tab"
+              href="#nav-home"
+              role="tab"
+              aria-controls="nav-home"
+              aria-selected="true"
+              >Medicos Activos</a
+            >
+            <a
+              class="nav-link" routerLinkActive="active"
+              id="nav-profile-tab"
+              data-toggle="tab"
+              href="#nav-profile"
+              role="tab"
+              aria-controls="nav-profile"
+              aria-selected="false"
+              >Medicos Desactivados</a
+            >
+            <a
+              class="nav-link" routerLinkActive="active"
+              id="nav-home-tab"
+              data-toggle="tab"
+              href="#nav-home2"
+              role="tab"
+              aria-controls="nav-home"
+              aria-selected="true"
+              >Pacientes Activos</a
+            >
+            <a
+              class="nav-link" routerLinkActive="active"
+              id="nav-profile-tab"
+              data-toggle="tab"
+              href="#nav-profile2"
+              role="tab"
+              aria-controls="nav-profile"
+              aria-selected="false"
+              >Pacientes Desactivados</a
+            >
+          </div>
+        </nav>
+        <div class="tab-content" id="nav-tabContent">
+          <div
+            class="tab-pane fade show active"
+            id="nav-home"
+            role="tabpanel"
+            aria-labelledby="nav-home-tab"
+          >
+            <table
+              datatable
+              class="table table-hover table-responsive"
+            >
+              <thead>
+                <tr>
+                  <th scope="col">N°</th>
+                  <th scope="col">Nombres</th>
+                  <th scope="col">DNI</th>
+                  <th scope="col">Correo</th>
+                  <th scope="col">Opciones</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let user of userMedicosActivos,let i=index">
+                  <th scope="row">{{i+1}}</th>
+                  <td>{{user.nombres}}</td>
+                  <td>{{user.dni}}</td>
+                  <td>{{user.correo}}</td>
+                  <td class="d-flex justify-content-end">
+                    <button class="btn btn-danger mr-2" (click)="desactivarUsuario(user.id_usuario)"
+                      >
+                      DESACTIVAR</button
+                    >
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div
+            class="tab-pane fade"
+            id="nav-profile"
+            role="tabpanel"
+            aria-labelledby="nav-profile-tab"
+          >
+          <table
+              datatable
+              class="table table-hover table-responsive"
+            >
+              <thead>
+                <tr>
+                  <th scope="col">N°</th>
+                  <th scope="col">Nombres</th>
+                  <th scope="col">DNI</th>
+                  <th scope="col">Correo</th>
+                  <th scope="col">Opciones</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let user of userMedicosDesactivos,let i=index">
+                  <th scope="row">{{i+1}}</th>
+                  <td>{{user.nombres}}</td>
+                  <td>{{user.dni}}</td>
+                  <td>{{user.correo}}</td>
+                  <td class="d-flex justify-content-end">
+                    <button class="btn btn-success mr-2" (click)="activarUsuario(user.id_usuario)"
+                      >
+                      ACTIVAR</button
+                    >
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div
+            class="tab-pane fade"
+            id="nav-home2"
+            role="tabpanel"
+            aria-labelledby="nav-profile-tab"
+          >
+          <table
+          datatable
+          class="table table-hover table-responsive"
+        >
+          <thead>
+            <tr>
+              <th scope="col">N°</th>
+              <th scope="col">Nombres</th>
+              <th scope="col">DNI</th>
+              <th scope="col">Correo</th>
+              <th scope="col">Opciones</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let user of userPacientesActivos,let i=index">
+              <th scope="row">{{i+1}}</th>
+              <td>{{user.nombres}}</td>
+              <td>{{user.dni}}</td>
+              <td>{{user.correo}}</td>
+              <td class="d-flex justify-content-end">
+                <button class="btn btn-danger mr-2" (click)="desactivarUsuario(user.id_usuario)"
+                  >
+                  DESACTIVAR</button
+                >
+              </td>
+            </tr>
+          </tbody>
+        </table>
+          </div>
+          <div
+            class="tab-pane fade"
+            id="nav-profile2"
+            role="tabpanel"
+            aria-labelledby="nav-profile-tab"
+          >
+          <table
+              datatable
+              class="table table-hover table-responsive"
+            >
+              <thead>
+                <tr>
+                  <th scope="col">N°</th>
+                  <th scope="col">Nombres</th>
+                  <th scope="col">DNI</th>
+                  <th scope="col">Correo</th>
+                  <th scope="col">Opciones</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let user of userPacientesDesactivos,let i=index">
+                  <th scope="row">{{i+1}}</th>
+                  <td>{{user.nombres}}</td>
+                  <td>{{user.dni}}</td>
+                  <td>{{user.correo}}</td>
+                  <td class="d-flex justify-content-end">
+                    <button class="btn btn-success mr-2" (click)="activarUsuario(user.id_usuario)"
+                      >
+                      ACTIVAR</button
+                    >
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -7,11 +7,12 @@
       <div class="info">
         <a class="" data-toggle="collapse" href="#collapseExample" aria-expanded="true">
           <span>
-            {{paciente.nombres +' '+paciente.apellidos}}
-            <!-- <span class="user-level">Administrador</span> -->
+            {{usuario.nombres +' '+usuario.apellidos}}
+            <span class="user-level">{{rol}}</span>
             <span class="caret"></span>
           </span>
         </a>
+
         <div class="clearfix"></div>
         <div class="collapse in" id="collapseExample" aria-expanded="true">
           <ul class="nav">
@@ -41,30 +42,60 @@
           <p>Principal</p>
         </a>
       </li>
-      <li class="nav-item" routerLinkActive="active">
+      <li class="nav-item" routerLinkActive="active" *ngIf="listar_medicos">
         <a routerLink="/dashboard/medicos">
           <i class="la la-user-md"></i>
-          <p>Medicos</p>
+          <p>Listar Medicos</p>
         </a>
       </li>
-      <li class="nav-item" routerLinkActive="active">
+      <li class="nav-item" routerLinkActive="active" *ngIf="nuevo_medico">
+        <a routerLink="/dashboard/new_medicos">
+          <i class="la la-user-md"></i>
+          <p>Nuevo Medico</p>
+        </a>
+      </li>
+      <li class="nav-item" routerLinkActive="active" *ngIf="listar_pacientes">
         <a routerLink="/dashboard/pacientes">
           <i class="la la-users"></i>
-          <p>Pacientes</p>
+          <p>Listar Pacientes</p>
         </a>
       </li>
-      <li class="nav-item" routerLinkActive="active">
+      <li class="nav-item" routerLinkActive="active"  *ngIf="agendar_citas">
         <a routerLink="/dashboard/citas">
           <i class="la la-calendar"></i>
-          <p>Citas</p>
+          <p>Agendar Citas</p>
         </a>
       </li>
-      <li class="nav-item" routerLinkActive="active">
+      <li class="nav-item" routerLinkActive="active" *ngIf="programar_citas">
+        <a routerLink="/dashboard/programacion_citas">
+          <i class="la la-calendar"></i>
+          <p>Programar Citas</p>
+        </a>
+      </li>
+      <li class="nav-item" routerLinkActive="active" *ngIf="reporte_citas">
+        <a routerLink="/dashboard/reporte_citas">
+          <i class="la la-calendar"></i>
+          <p>Reporte Citas</p>
+        </a>
+      </li>
+      <li class="nav-item" routerLinkActive="active" *ngIf="historial_citas">
+        <a routerLink="/dashboard/historial_citas">
+          <i class="la la-calendar"></i>
+          <p>Historial Citas</p>
+        </a>
+      </li>
+      <li class="nav-item" routerLinkActive="active" *ngIf="usuarios_link">
+        <a routerLink="/dashboard/usuarios">
+          <i class="la la-calendar"></i>
+          <p>Usuarios</p>
+        </a>
+      </li>
+      <!-- <li class="nav-item" routerLinkActive="active" *ngIf="especialidades">
         <a routerLink="/dashboard/especialidades">
           <i class="la la-check-circle"></i>
           <p>Especialidades</p>
         </a>
-      </li>
+      </li> -->
     </ul>
   </div>
 </div>

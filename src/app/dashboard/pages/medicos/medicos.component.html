@@ -3,10 +3,11 @@
     <div class="card">
       <div class="card-header d-flex">
         <div class="card-title">Lista de Medicos</div>
-        <button class="btn btn-primary ml-auto">+ Agregar Medico</button>
+        <a routerLink="/dashboard/new_medicos" class="btn btn-primary ml-auto">+ Agregar Medico</a>
+
       </div>
       <div class="card-body">
-        <table class="table table-hover table-responsive">
+        <table datatable class="table table-hover table-responsive">
           <thead>
             <tr>
               <th scope="col">N°</th>
@@ -15,237 +16,29 @@
               <th scope="col">DNI</th>
               <th scope="col">Correo</th>
               <th scope="col">Dirección</th>
-              <th scope="col">Fecha</th>
-              <th scope="col">Opciones</th>
+              <th scope="col">Fecha Nacimiento</th>
             </tr>
           </thead>
           <tbody>
-            <tr>
-              <td>1</td>
-              <td>Denis</td>
-              <td>Espinoza</td>
-              <td>DNI</td>
-              <td>Denis@gmail.com</td>
-              <td>GPS</td>
-              <td>2020</td>
-              <td class="d-flex justify-content-end">
+            <tr *ngFor="let medico of medicos">
+              <th scope="row">{{ medico.idMedico }}</th>
+              <td>{{ medico.nombres }}</td>
+              <td>{{ medico.apellidos }}</td>
+              <td>{{ medico.dni }}</td>
+              <td>{{ medico.correo }}</td>
+              <td>{{ medico.direccion }}</td>
+              <td>{{ medico.fechaNacimiento }}</td>
+              <!-- <td class="d-flex justify-content-end">
                 <a href="" class="btn btn-primary mr-2"
                   ><li class="la la-edit"></li
                 ></a>
                 <a href="" class="btn btn-danger mr-2"
                   ><li class="la la-trash"></li
                 ></a>
-                <a href="" class="btn btn-info"
-                  ><li class="la la-plus"></li>
-                  Mas información</a
-                >
-              </td>
-            </tr>
-            <tr>
-              <td>1</td>
-              <td>Denis</td>
-              <td>Espinoza</td>
-              <td>DNI</td>
-              <td>Denis@gmail.com</td>
-              <td>GPS</td>
-              <td>2020</td>
-              <td class="d-flex justify-content-end">
-                <a href="" class="btn btn-primary mr-2"
-                  ><li class="la la-edit"></li
-                ></a>
-                <a href="" class="btn btn-danger mr-2"
-                  ><li class="la la-trash"></li
-                ></a>
-                <a href="" class="btn btn-info"
-                  ><li class="la la-plus"></li>
-                  Mas información</a
-                >
-              </td>
-            </tr>
-            <tr>
-              <td>1</td>
-              <td>Denis</td>
-              <td>Espinoza</td>
-              <td>DNI</td>
-              <td>Denis@gmail.com</td>
-              <td>GPS</td>
-              <td>2020</td>
-              <td class="d-flex justify-content-end">
-                <a href="" class="btn btn-primary mr-2"
-                  ><li class="la la-edit"></li
-                ></a>
-                <a href="" class="btn btn-danger mr-2"
-                  ><li class="la la-trash"></li
-                ></a>
-                <a href="" class="btn btn-info"
-                  ><li class="la la-plus"></li>
-                  Mas información</a
-                >
-              </td>
-            </tr>
-            <tr>
-              <td>1</td>
-              <td>Denis</td>
-              <td>Espinoza</td>
-              <td>DNI</td>
-              <td>Denis@gmail.com</td>
-              <td>GPS</td>
-              <td>2020</td>
-              <td class="d-flex justify-content-end">
-                <a href="" class="btn btn-primary mr-2"
-                  ><li class="la la-edit"></li
-                ></a>
-                <a href="" class="btn btn-danger mr-2"
-                  ><li class="la la-trash"></li
-                ></a>
-                <a href="" class="btn btn-info"
-                  ><li class="la la-plus"></li>
-                  Mas información</a
-                >
-              </td>
-            </tr>
-            <tr>
-              <td>1</td>
-              <td>Denis</td>
-              <td>Espinoza</td>
-              <td>DNI</td>
-              <td>Denis@gmail.com</td>
-              <td>GPS</td>
-              <td>2020</td>
-              <td class="d-flex justify-content-end">
-                <a href="" class="btn btn-primary mr-2"
-                  ><li class="la la-edit"></li
-                ></a>
-                <a href="" class="btn btn-danger mr-2"
-                  ><li class="la la-trash"></li
-                ></a>
-                <a href="" class="btn btn-info"
-                  ><li class="la la-plus"></li>
-                  Mas información</a
-                >
-              </td>
-            </tr>
-            <tr>
-              <td>1</td>
-              <td>Denis</td>
-              <td>Espinoza</td>
-              <td>DNI</td>
-              <td>Denis@gmail.com</td>
-              <td>GPS</td>
-              <td>2020</td>
-              <td class="d-flex justify-content-end">
-                <a href="" class="btn btn-primary mr-2"
-                  ><li class="la la-edit"></li
-                ></a>
-                <a href="" class="btn btn-danger mr-2"
-                  ><li class="la la-trash"></li
-                ></a>
-                <a href="" class="btn btn-info"
-                  ><li class="la la-plus"></li>
-                  Mas información</a
-                >
-              </td>
+              </td> -->
             </tr>
           </tbody>
-
         </table>
-        <nav aria-label="Page navigation example">
-          <ul class="pagination">
-            <li class="page-item">
-              <a class="page-link" href="#" aria-label="Previous">
-                <span aria-hidden="true">&laquo;</span>
-                <span class="sr-only">Previous</span>
-              </a>
-            </li>
-            <li class="page-item"><a class="page-link" href="#">1</a></li>
-            <li class="page-item"><a class="page-link" href="#">2</a></li>
-            <li class="page-item"><a class="page-link" href="#">3</a></li>
-            <li class="page-item">
-              <a class="page-link" href="#" aria-label="Next">
-                <span aria-hidden="true">&raquo;</span>
-                <span class="sr-only">Next</span>
-              </a>
-            </li>
-          </ul>
-        </nav>
-      </div>
-    </div>
-  </div>
-</div>
-<div class="row">
-  <div class="col-md-3">
-    <div class="card card-stats card-warning">
-      <div class="card-body ">
-        <div class="row">
-          <div class="col-5">
-            <div class="icon-big text-center">
-              <i class="la la-users"></i>
-            </div>
-          </div>
-          <div class="col-7 d-flex align-items-center">
-            <div class="numbers">
-              <p class="card-category">Total Medicos</p>
-              <h4 class="card-title">294</h4>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="col-md-3">
-    <div class="card card-stats card-success">
-      <div class="card-body ">
-        <div class="row">
-          <div class="col-5">
-            <div class="icon-big text-center">
-              <i class="la la-bar-chart"></i>
-            </div>
-          </div>
-          <div class="col-7 d-flex align-items-center">
-            <div class="numbers">
-              <p class="card-category">Reporte Atenciones</p>
-              <h4 class="card-title">2345</h4>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="col-md-3">
-    <div class="card card-stats card-danger">
-      <div class="card-body">
-        <div class="row">
-          <div class="col-5">
-            <div class="icon-big text-center">
-              <i class="la la-newspaper-o"></i>
-            </div>
-          </div>
-          <div class="col-7 d-flex align-items-center">
-            <div class="numbers">
-              <p class="card-category">Reporte de Mala atención</p>
-              <h4 class="card-title">3</h4>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="col-md-3">
-    <div class="card card-stats card-primary">
-      <div class="card-body ">
-        <div class="row">
-          <div class="col-5">
-            <div class="icon-big text-center">
-              <i class="la la-check-circle"></i>
-            </div>
-          </div>
-          <div class="col-7 d-flex align-items-center">
-            <div class="numbers">
-              <p class="card-category">Atenciones diarias</p>
-              <h4 class="card-title">176</h4>
-            </div>
-          </div>
-        </div>
       </div>
     </div>
   </div>

@@ -12,6 +12,13 @@ import { DashboardRoutingModule } from './dashboard-routing.module';
 import {NgxPaginationModule} from 'ngx-pagination';
 import { FilterPipeModule } from 'ngx-filter-pipe';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { DataTablesModule } from 'angular-datatables';
+import { NewMedicosComponent } from './pages/new-medicos/new-medicos.component';
+import { ProgramacionCitasComponent } from './pages/programacion-citas/programacion-citas.component';
+import { HistoryCitasComponent } from './pages/history-citas/history-citas.component';
+import { HomePacienteComponent } from './pages/home-paciente/home-paciente.component';
+import { UsuariosComponent } from './pages/usuarios/usuarios.component';
+import { ReporteCitasComponent } from './pages/reporte-citas/reporte-citas.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +30,13 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     MainComponent,
     HeaderComponent,
     SidebarComponent,
+    NewMedicosComponent,
+    ProgramacionCitasComponent,
+    HistoryCitasComponent,
+    HomePacienteComponent,
+    UsuariosComponent,
+    ReporteCitasComponent,
   ],
-  imports: [CommonModule,DashboardRoutingModule,NgxPaginationModule,FormsModule,FilterPipeModule,ReactiveFormsModule]
+  imports: [CommonModule,DashboardRoutingModule,NgxPaginationModule,FormsModule,FilterPipeModule,ReactiveFormsModule,DataTablesModule]
 })
 export class DashboardModule {}

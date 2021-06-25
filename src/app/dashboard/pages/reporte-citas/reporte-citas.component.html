@@ -1,0 +1,35 @@
+<div class="row">
+  <div class="col-md-12">
+    <div class="card">
+      <div class="card-header">
+        <div class="card-title">Lista de Citas</div>
+      </div>
+      <div class="card-body">
+        <table datatable class="table table-hover table-responsive">
+          <thead>
+            <tr>
+              <th scope="col">N°</th>
+              <th scope="col">Medico</th>
+              <th scope="col">Paciente</th>
+              <th scope="col">Estado</th>
+              <th scope="col">Especialidad</th>
+              <th scope="col">Fecha</th>
+              <th scope="col">Hora</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let cita of listaCitasReporte">
+              <th scope="row">{{ cita.id_cita }}</th>
+              <td>{{ cita.medico }}</td>
+              <td>{{ cita.paciente }}</td>
+              <td>{{ cita.estado }}</td>
+              <td>{{ cita.especialidad }}</td>
+              <td>{{ cita.fecha }}</td>
+              <td>{{ cita.hora }}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
